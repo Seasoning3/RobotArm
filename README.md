@@ -125,16 +125,15 @@ $ rqt_image_view
 
 패키지 설치
 
-1. darknet_ros 설치
+darknet_ros 설치
 
 ~~~shell
 sudo apt-get install -y ros-melodic-image-pipeline
-
 cd ~/catkin_ws/src
 git clone --recursive https://github.com/Tossy0423/yolov4-for-darknet_ros.git
 ~~~
 
-2. darknet_ros modification
+darknet_ros 수정
 
 ~~~shell
 cd ~/catkin_ws/src/yolov4-for-darknet_ros/darknet_ros
