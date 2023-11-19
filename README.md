@@ -1,5 +1,28 @@
 # RobotArm
 
+# Python3 설치
+
+~~~shell
+sudo apt install python3-pip
+~~~
+
+# ROS Melodic 설치
+~~~shell
+cd ~/Downloads/
+sudo apt update
+
+git clone https://github.com/zeta0707/installROS.git
+cd installROS
+./install-ros.sh
+~~~
+
+# catkin workspace 설치
+
+~~~shell
+jetson@jp4512G:~/catkin_ws$ cca
+jetson@jp4512G:~/catkin_ws$ cma
+~~~
+
 # JessiArm 설치
 
 ~~~shell
@@ -8,7 +31,23 @@ $ git clone https://github.com/zeta0707/jessiarm.git
 $ cd ~/catkin_ws
 ~~~
 
-# keyboard
+# Joystick 조작
+
+패키지 설치
+
+~~~shell
+$ sudo apt-get install joystick
+$ cd /dev/input
+$ ls js*
+~~~
+
+launch 파일로 실행
+
+~~~shell
+$ roslaunch jessiarm_joy joy_teleop_axes_jetson.launch
+~~~
+
+# keyboard 조작
 
 teleop_twist_keyboard 설치
 
@@ -22,6 +61,19 @@ launch 파일로 실행
 
 ~~~shell
 $ roslaunch jessiarm_control teleop_keyboard.launch
+~~~
+
+# 자동 조작
+
+~~~shell
+#두 곳에 복사
+jetson@jp4612GCv346Py37:~/catkin_ws$ cp ~/.ros/automove.txt ~/catkin_ws/src/jessiarm/jessiarm_control/src
+jetson@jp4612GCv346Py37:~/catkin_ws$ cp ~/.ros/automove.txt ~/catkin_ws
+~~~
+
+~~~shell
+$ cd catkin_ws
+$ python src/jessiarm/jessiarm_control/src/auto_move.py
 ~~~
 
 # blob_control
